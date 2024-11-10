@@ -2,10 +2,12 @@ let gridSize = 16;
 createGrid();
 const btn = document.querySelector("button");
 btn.addEventListener("click", () => {
+  selectedGridSize = parseInt(prompt("Set grid size"));
   if (selectedGridSize < 100) {
-    selectedGridSize = parseInt(prompt());
     deleteGrid();
     createGrid(selectedGridSize);
+  } else {
+    alert("Grid size must be lower than 100!");
   }
 });
 
